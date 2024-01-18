@@ -10,25 +10,17 @@ import greenfoot.*;
 public class Card extends Actor
 {
    
-   Shape shape; 
-   Color color; 
-   int numberOfShapes; 
-   int shading; 
-   GreenfootImage cardImage; 
-   GreenfootImage selectedCardImage; 
+    
+
+   private Shape shape; 
+   private Color color; 
+   private boolean isSelected; 
+   private int numberOfShapes; 
+   private int shading; 
+   private GreenfootImage cardImage; 
+   private GreenfootImage selectedCardImage; 
    
-   
-   Card(Shape shape, Color color, int numberOfShapes, int shading, GreenfootImage cardImage, GreenfootImage selectedCardImage)
-   {
-       super();
-   }
-   
-   public static void main(String[] args)
-   {
-       Card card = new Card(Card.Shape, Card.Color, int numberOfShapes, int shading, greenfoot.GreenfootImage, greenfoot.GreenfootImage);
-   }
-   
-    public enum Shape
+   public enum Shape
    {
           ESC, COMMAND, OPTION, CONTROL, DELETE, RETURN, SHIFT;
    }
@@ -37,6 +29,13 @@ public class Card extends Actor
    {
           ESC, COMMAND, OPTION, CONTROL, DELETE, RETURN, SHIFT;
    }
+   
+   public Card(Shape shape, Color color, int numberOfShapes, int shading, GreenfootImage cardImage, GreenfootImage selectedCardImage)
+   {
+       
+   }
+   
+   
    
 }
 
