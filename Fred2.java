@@ -6,17 +6,16 @@
  */
 public class Fred2  
 {
-    
     byte gary; 
     
-    public byte Gary(no parameter)
+    public byte Gary()
     {
         return gary; 
     }
     
     public int NotPython(no parameter) 
     {
-        return gary; 
+        return Gary(); 
     }
 }
 
