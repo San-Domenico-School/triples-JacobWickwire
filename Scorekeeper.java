@@ -1,5 +1,5 @@
 /**
- * Write a description of class Scorekeeper here.
+ * Scorekeeper keeps the score. :) 
  * 
  * @author (Jacob Wickwire) 
  * @version (1.0)

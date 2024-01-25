@@ -1,5 +1,6 @@
+import java.util.ArrayList; 
 /**
- * Write a description of class Deck here.
+ * it is a deck of cards. :) 
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -10,9 +11,40 @@ import greenfoot.*;
 
 public class Deck 
 {
-    /****************************************************
-    ***   Leave as comment until ready to implement   ***
-    *****************************************************
+    private Card[] unShuffledDeck; 
+    private ArrayList<Card> shuffledDeck; 
+    
+    protected int getNumCardsInDeck() 
+    {
+        return shuffledDeck.size(); 
+    }
+    
+    protected Card getTopCard() 
+    {
+        return shuffledDeck.remove(0); 
+    }
+    
+    protected Card getShuffledCard(int input) 
+    {
+        return shuffledDeck.get(input); 
+    }
+    
+    protected ArrayList getShuffledDeck() 
+    {
+        return shuffledDeck; 
+    }
+    
+    //limitNumCardsInDeck() 
+    
+    private void createShuffledDeck()
+    {
+        for (int i = 1; i < unShuffledDeck.length; i++) 
+        {
+            shuffledDeck.add((int) (Math.random() * shuffledDeck.size()), unShuffledDeck[i]); 
+        }
+    } 
+    
+    
     // adds all the cards to the unshuffled deck.   
     private void populateUnshuffledDeckWithCards(int numOfCardsInDeck)        
     {
@@ -270,5 +302,4 @@ public class Deck
           }
     }
     
-    **************  END OF COMMENT BLOCK  ***************/
 }

@@ -1,6 +1,6 @@
 import greenfoot.*; 
 /**
- * Write a description of class Animations here.
+ * Animations. -v'-'v- 
  * 
  * @author (Jacob Wickwire) 
  * @version (1.0)
