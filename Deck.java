@@ -2,8 +2,8 @@ import java.util.ArrayList;
 /**
  * it is a deck of cards. :) 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Jacob Wickwire) 
+ * @version (1.3)
  */
 
 import greenfoot.*;
@@ -13,6 +13,16 @@ public class Deck
 {
     private Card[] unShuffledDeck; 
     private ArrayList<Card> shuffledDeck; 
+    
+    Deck(int numOfCardsInDeck)
+    {
+        numOfCardsInDeck = limitNumCardsInDeck(numOfCardsInDeck);  // limits size to 27 or 81        
+        unShuffledDeck = new Card[numOfCardsInDeck + 1];           // playing cards plus blank card
+        shuffledDeck = new ArrayList<>();                          // Instantiates ArrayList with no elements
+        populateUnshuffledDeckWithCards(numOfCardsInDeck);         // Initializes Unshuffled Deck
+        createShuffledDeck();                                      // Initializes shuffled deck excluding blank card
+    }
+    
     
     protected int getNumCardsInDeck() 
     {
@@ -34,7 +44,18 @@ public class Deck
         return shuffledDeck; 
     }
     
-    //limitNumCardsInDeck() 
+    protected int limitNumCardsInDeck(int number) 
+    {
+        if (number <= 27)
+        {
+            number = 27; 
+        }
+        else
+        {
+            number = 81; 
+        }
+        return number; 
+    }
     
     private void createShuffledDeck()
     {
