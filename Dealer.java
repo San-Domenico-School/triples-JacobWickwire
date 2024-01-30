@@ -13,7 +13,7 @@ public class Dealer extends Actor
     private ArrayList<Card> cardsOnBoard; 
     private ArrayList<Integer> selectedCardsIndex; 
     private Card[] cardsSelected; 
-    private int numCardsInDeck; 
-    private int triplesRemaining; 
+    private int numCardsInDeck = shuffledDeck.size(); 
+    private int triplesRemaining = numCardsInDeck / 3; 
     
 }
