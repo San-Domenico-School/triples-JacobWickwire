@@ -13,7 +13,51 @@ public class Dealer extends Actor
     private ArrayList<Card> cardsOnBoard; 
     private ArrayList<Integer> selectedCardsIndex; 
     private Card[] cardsSelected; 
-    private int numCardsInDeck = shuffledDeck.size(); 
-    private int triplesRemaining = numCardsInDeck / 3; 
+    private int numCardsInDeck; 
+    private int triplesRemaining; 
+    
+    public Dealer(int numCardsInDeck)
+    {
+        this.numCardsInDeck = numCardsInDeck; 
+        int triplesRemaining = numCardsInDeck / 3; 
+        deck = new Deck (numCardsInDeck); 
+        cardsSelected = new Card[3]; 
+    }
+    
+    public void addedToWorld(World world)
+    {
+        dealBoard();
+        setUI();
+    }
+    
+    public void dealBoard()
+    {
+        
+    }
+    
+    public void setUI()
+    {
+        
+    }
+    
+    public void endGame()
+    {
+        
+    }
+    
+    public void checkIfTriple()
+    {
+        
+    }
+    
+    public void actionIfTriple()
+    {
+        
+    }
+    
+    public void setCardsSelected(ArrayList<Card> cards, ArrayList<Integer> integers, Card[] card) 
+    {
+        
+    }
     
 }
