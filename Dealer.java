@@ -32,7 +32,14 @@ public class Dealer extends Actor
     
     public void dealBoard()
     {
-        
+        Greenfoot.playSound("shuffle.wav"); 
+        for (int x = 0; x < 3; x++)
+        {
+            for (int y = 0; y < 5; y++)
+            {
+                deck.getTopCard(); 
+            }
+        }
     }
     
     public void setUI()
