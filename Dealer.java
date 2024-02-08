@@ -37,14 +37,18 @@ public class Dealer extends Actor
         {
             for (int y = 0; y < 5; y++)
             {
-                deck.getTopCard(); 
+                getWorld().addObject(deck.getTopCard(), x * 140 + 75, y * 90 + 50); 
             }
         }
     }
     
     public void setUI()
     {
+        Integer cardsLeft = new Integer(deck.getNumCardsInDeck()); 
+        getWorld().showText(cardsLeft.toString(), 312, 470);
         
+        Integer funnyNumber = new Integer(Scorekeeper.getScore()); 
+        getWorld().showText(funnyNumber.toString(), 312, 505);
     }
     
     public void endGame()

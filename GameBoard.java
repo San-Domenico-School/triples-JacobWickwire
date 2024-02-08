@@ -14,8 +14,10 @@ public class GameBoard extends World
     {   
         super(430, 600, 1, false); 
         //new Tester("Slide");
-        new Tester(NUM_CARDS_IN_DECK);
+        //new Tester(NUM_CARDS_IN_DECK);
+        Dealer dealer = new Dealer(NUM_CARDS_IN_DECK); 
+        addObject(dealer, -30, -30); 
     }
-
-
+    
+    
 }
