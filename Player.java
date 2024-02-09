@@ -20,13 +20,18 @@ public class Player extends Actor
         cardsSelected = new Card[3]; 
         cardsOnBoard = new ArrayList<Card>(); 
         selectedCardsIndex = new ArrayList<Integer>(); 
-        
     }
     
     public void act()
     {
         selectCards(); 
         boolean threeCardsHaveBeenSelected = setCardsSelected(); 
+        if (setCardsSelected() == true) 
+        {
+            dealer.setCardsSelected(cardsOnBoard, selectedCardsIndex, cardsSelected); 
+            dealer.checkIfTriple(); 
+            resetCardsSelected(); 
+        }
     }
     
     public void addedToWorld(World world) 
@@ -36,7 +41,24 @@ public class Player extends Actor
     
     private void selectCards()
     {
-        
+        for (int i = 0; i < cardsOnBoard.size(); i ++)
+        {
+            if(Greenfoot.mouseClicked(cardsOnBoard.get(i)))
+            {
+                if (cardsOnBoard.get(i).getIsSelected())
+                {
+                    cardsOnBoard.get(i).setIsSelected(false); 
+                    cardsOnBoard.get(i).setImage(cardsOnBoard.get(i).getCardImage());
+                    selectedCardsIndex.remove(selectedCardsIndex.indexOf(i)); 
+                }
+                else
+                {
+                    cardsOnBoard.get(i).setIsSelected(true); 
+                    cardsOnBoard.get(i).setImage(cardsOnBoard.get(i).getSelectedCardImage()); 
+                    selectedCardsIndex.add(i); 
+                }
+            }
+        }
     }
     
     private void resetCardsSelected()
@@ -46,7 +68,17 @@ public class Player extends Actor
     
     private boolean setCardsSelected()
     {
-        return true; 
+        if (selectedCardsIndex.size() == 3)
+        {
+            cardsSelected[0] = cardsOnBoard.get(selectedCardsIndex.get(0));
+            cardsSelected[1] = cardsOnBoard.get(selectedCardsIndex.get(1));
+            cardsSelected[2] = cardsOnBoard.get(selectedCardsIndex.get(2));
+            return true; 
+        }
+        else 
+        {
+            return false; 
+        }
     }
     
 }
