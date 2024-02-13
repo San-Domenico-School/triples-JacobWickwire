@@ -63,7 +63,11 @@ public class Player extends Actor
     
     private void resetCardsSelected()
     {
-        
+        for (int i = 0; i < cardsOnBoard.size(); i ++)
+        {
+            cardsOnBoard.get(i).setIsSelected(false); 
+            cardsOnBoard.get(i).setImage(cardsOnBoard.get(i).getCardImage()); 
+        }
     }
     
     private boolean setCardsSelected()
